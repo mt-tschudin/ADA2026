@@ -39,3 +39,10 @@ Why: uploads your current branch to your own GitHub fork.
 git push --force-with-lease origin main
 ```
 Why: use this when `git rebase` rewrote your commit history and a normal push is rejected.
+
+## Homework requirements
+Graded on three criteria:
+
+1. **Correctness of results** — numbers, plots and conclusions must be right. Sanity-check totals (e.g. sums of subgroups should match the overall total).
+2. **Quality of the textual description** — for every plot/result, write what is shown (axes, units, what each bar/line represents) and what we can conclude from it. State the claim, then the evidence.
+3. **Quality of code** — clear variable names, no dead code or unused cells, small reusable functions instead of copy-paste, comments where the intent isn't obvious. The notebook should run top-to-bottom without errors (`Kernel → Restart & Run All`).
