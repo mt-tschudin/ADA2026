@@ -7,6 +7,16 @@
 
 > These notes summarize the key concepts from the lecture slides. The lecture is organized around three main parts: **descriptive statistics**, **quantifying uncertainty**, and **relating two variables**.
 
+***
+A small p-value says:
+“My result would be unusual if \(H_0\) were true.”
+
+It does not say:
+“\(H_0\) itself has a small probability of being true.”
+
+That distinction is the core of p-values.
+***
+
 ---
 
 # Part 1 — Descriptive statistics
