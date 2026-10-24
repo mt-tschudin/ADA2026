@@ -187,9 +187,9 @@ This is a strong assumption and generally cannot be proven from the observed dat
 
 Instead of matching on every covariate separately, compress them into one number:
 
-\[
-e(x)=P(T=1\mid X=x)
-\]
+$
+        e(x)=P(T=1\mid X=x)
+$
 
 where:
 - \(T=1\): treated;
@@ -209,12 +209,7 @@ It can be estimated from data, for example with a model whose:
 The key property is **balance**.
 
 For subjects with the same propensity score \(p\),
-
-\[
-P(X=x\mid T=1,e(X)=p)
-=
-P(X=x\mid T=0,e(X)=p).
-\]
+$ P(X=x\mid T=1,e(X)=p) = P(X=x\mid T=0,e(X)=p).$
 
 Intuitively:
 
@@ -274,23 +269,23 @@ Even perfect balance on observed variables does not guarantee a valid causal eff
 
 What we estimate is:
 
-\[
+$
 P(T=1\mid \text{observed covariates}),
-\]
+$
 
 but the true assignment mechanism may depend on all relevant variables:
 
-\[
+$
 P(T=1\mid \text{all covariates}).
-\]
+$
 
 These may differ:
 
-\[
+$
 P(T=1\mid X_{\text{obs}})
 \neq
 P(T=1\mid X_{\text{all}}).
-\]
+$
 
 So matching controls **observed imbalance**, but cannot automatically remove bias from unobserved confounders.
 
@@ -304,30 +299,30 @@ Sensitivity analysis asks:
 
 Instead of assuming matched subjects have identical treatment probabilities, allow their treatment odds to differ by a factor
 
-\[
-\Gamma \ge 1.
-\]
+$\Gamma \ge 1.$
 
-For matched subjects \(k\) and \(\ell\),
+For matched subjects $(k)$ and $(\ell)$,
 
-\[
-\frac{1}{\Gamma}
-\le
-\frac{\pi_k/(1-\pi_k)}
-{\pi_\ell/(1-\pi_\ell)}
-\le
-\Gamma,
-\]
 
-where \(\pi_k\) and \(\pi_\ell\) are their true treatment probabilities.
+$
+        \frac{1}{\Gamma}
+        \le
+        \frac{\pi_k/(1-\pi_k)}
+        {\pi_\ell/(1-\pi_\ell)}
+        \le
+        \Gamma,
+$
+
+
+where $(\pi_k)$ and $(\pi_\ell)$ are their true treatment probabilities.
 
 ### Interpretation
 
-- \(\Gamma=1\): no hidden bias; naive model holds.
-- \(\Gamma=2\): one matched subject may have up to twice the treatment odds of the other.
-- Large \(\Gamma\): increasingly strong hidden confounding is allowed.
+- $(\Gamma=1)$: no hidden bias; naive model holds.
+- $(\Gamma=2)$: one matched subject may have up to twice the treatment odds of the other.
+- Large $(\Gamma)$: increasingly strong hidden confounding is allowed.
 
-As \(\Gamma\to\infty\), the assumption becomes uninformative.
+As $(\Gamma\to\infty)$, the assumption becomes uninformative.
 
 ---
 
@@ -335,17 +330,17 @@ As \(\Gamma\to\infty\), the assumption becomes uninformative.
 
 Suppose under the naive model you reject
 
-\[
+$
 H_0:\text{no treatment effect}.
-\]
+$
 
-Now increase \(\Gamma\).
+Now increase $(\Gamma)$.
 
 If the result becomes non-significant at
 
-\[
-\Gamma=1.1,
-\]
+$
+        \Gamma=1.1,
+$
 
 then only a tiny amount of hidden bias is needed to overturn the conclusion.
 
@@ -353,9 +348,9 @@ The result is fragile.
 
 If it takes something like
 
-\[
+$
 \Gamma>6,
-\]
+$
 
 then a very strong hidden difference in treatment odds would be required.
 
@@ -429,7 +424,7 @@ RCT      observational study
 | **Confounder** | Variable influencing both treatment assignment and outcome |
 | **Randomization** | Breaks systematic links between treatment and covariates |
 | **Matching** | Creates treated/control groups similar on observed covariates |
-| **Propensity score** | \(P(T=1\mid X)\) based on observed covariates |
+| **Propensity score** | $(P(T=1\mid X))$ based on observed covariates |
 | **Balance** | Similar covariate distributions in treated and control groups |
 | **Natural experiment** | Treatment assignment is unusually haphazard due to external circumstances |
 | **Sensitivity analysis** | Tests robustness to possible unobserved confounding |
